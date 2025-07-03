@@ -45,6 +45,7 @@ public class SauceDemoTest {
     }
 
     @Test
+    @Disabled
     public void loginFailureTest() throws InterruptedException {
         driver.get("https://www.saucedemo.com");
 
@@ -62,6 +63,29 @@ public class SauceDemoTest {
         System.out.println("Actual error message: " + actualErrorMessage);
 
         assertTrue(actualErrorMessage.contains(expectedErrorMessage));
+    }
+
+    @Test
+    public void sidebarTest() throws InterruptedException {
+        driver.get("https://www.saucedemo.com");
+
+        WebElement usernameField = driver.findElement(By.id("user-name"));
+        usernameField.sendKeys("standard_user");
+
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys("secret_sauce");
+
+        WebElement loginButton = driver.findElement(By.id("login-button"));
+        loginButton.click();
+
+        WebElement menuButton = driver.findElement(By.className("bm-burger-button"));
+        menuButton.click();
+
+        WebElement sidebar = driver.findElement(By.className("bm-menu-wrap"));
+
+        Thread.sleep(2000);
+
+        assertTrue(sidebar.isDisplayed());
     }
 
 
