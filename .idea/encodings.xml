@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/org/example/GoogleTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/test/java/org/example/SauceDemoTest.java" charset="UTF-8" />
   </component>
 </project>

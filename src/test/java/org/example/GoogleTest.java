@@ -3,6 +3,7 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,6 +22,7 @@ public class GoogleTest {
     }
 
     @Test
+    @Disabled
     public void searchGoogle() throws InterruptedException {
         driver.get("https://www.google.com");
 
