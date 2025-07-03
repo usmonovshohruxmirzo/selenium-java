@@ -1,4 +1,4 @@
-﻿package org.example;
+package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -28,7 +28,7 @@ public class GoogleTest {
         searchBox.sendKeys("Selenium Java example");
         searchBox.sendKeys(Keys.RETURN);
 
-        Thread.sleep(3000); // Just for demo — wait to see results
+        Thread.sleep(3000);
 
         System.out.println("Page title is: " + driver.getTitle());
     }
