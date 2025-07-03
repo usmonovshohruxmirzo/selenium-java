@@ -13,25 +13,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SauceDemoTest {
-
     private WebDriver driver;
+    final String URL = "https://www.saucedemo.com";
+    final String username = "standard_user";
+    final String password = "secret_sauce";
 
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.get(URL);
     }
 
     @Test
-    @Disabled
     public void loginTest() throws InterruptedException {
-        driver.get("https://www.saucedemo.com");
-
         WebElement usernameField = driver.findElement(By.id("user-name"));
-        usernameField.sendKeys("standard_user");
+        usernameField.sendKeys(username);
 
         WebElement passwordField = driver.findElement(By.id("password"));
-        passwordField.sendKeys("secret_sauce");
+        passwordField.sendKeys(password);
 
         Thread.sleep(5000);
 
@@ -45,10 +45,7 @@ public class SauceDemoTest {
     }
 
     @Test
-    @Disabled
     public void loginFailureTest() throws InterruptedException {
-        driver.get("https://www.saucedemo.com");
-
         WebElement loginButton = driver.findElement(By.id("login-button"));
         loginButton.click();
 
@@ -67,13 +64,11 @@ public class SauceDemoTest {
 
     @Test
     public void sidebarTest() throws InterruptedException {
-        driver.get("https://www.saucedemo.com");
-
         WebElement usernameField = driver.findElement(By.id("user-name"));
-        usernameField.sendKeys("standard_user");
+        usernameField.sendKeys(username);
 
         WebElement passwordField = driver.findElement(By.id("password"));
-        passwordField.sendKeys("secret_sauce");
+        passwordField.sendKeys(password);
 
         WebElement loginButton = driver.findElement(By.id("login-button"));
         loginButton.click();
@@ -91,7 +86,7 @@ public class SauceDemoTest {
 
     @AfterEach
     public void tearDown() {
-        if (driver != null) {
+        if (driver != null ) {
             driver.quit();
         }
     }
